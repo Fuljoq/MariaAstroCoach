@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Astro Coach - Guía Espiritual</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="Imgs/imagen astrologa.png" alt="Maria Astro Coach" class="logo">
+                <h1>Maria Astro Coach</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="Views/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Inicio Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Bienvenidos a un viaje de autodescubrimiento</h2>
+                <p>Encuentra claridad y dirección a través de la astrología y el coaching Ontologico</p>
+                <div class="hero-buttons">
+                    <a href="#servicios" class="btn-primary">Ver Servicios</a>
+                    <a href="Views/contacto.html" class="btn-secondary">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Mis Servicios</h2>
+            <div class="circular-services">
+                <!-- Servicio 1 - Carta Natal -->
+                <div class="service-circle" style="--angle: 0deg" data-service="carta-natal">
+                    <div class="service-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>Carta Natal</h3>
+                        <div class="service-details">
+                            <p>La Carta Natal es una sesión online vía zoom o WhatsApp que tiene una duración de 60' a 90', donde se hace lectura de las energías en ese momento de nacimiento que nos empiezan a hablar de vos y tus desafíos durante toda tu vida.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Servicio 2 - Revolución Solar -->
+                <div class="service-circle" style="--angle: 120deg" data-service="revolucion-solar">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>Revolución Solar</h3>
+                        <div class="service-details">
+                            <p>La Revolución Solar es una sesión online vía zoom o WhatsApp que tiene una duración de 60' a 90', donde hablamos qué energías te van a acompañar desde éste cumpleaños a tu próximo cumple, en relación a tu carta natal para poder aprovecharlas en tu camino evolutivo personal.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Servicio 3 - Coaching Ontológico -->
+                <div class="service-circle" style="--angle: 240deg" data-service="coaching">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>Coaching Ontológico</h3>
+                        <div class="service-details">
+                            <p>El Coaching Ontológico son sesiones de 60' a 90' donde mediante preguntas poderosas podemos generar ese cambio de observador y realizar nuevas acciones para el logro de objetivos.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Círculo central -->
+                <div class="center-circle">
+                    <div class="lotus-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <p class="center-message">Todas nuestras<br>sesiones son<br><span class="highlight">online</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceHeaders = document.querySelectorAll('.service-header');
+            
+            serviceHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const serviceItem = this.parentElement;
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.toggle-icon');
+                    
+                    // Close all other items
+                    document.querySelectorAll('.service-item').forEach(item => {
+                        if (item !== serviceItem) {
+                            item.classList.remove('active');
+                            item.querySelector('.service-content').style.maxHeight = null;
+                            item.querySelector('.toggle-icon').textContent = '+';
+                        }
+                    });
+                    
+                    // Toggle current item
+                    serviceItem.classList.toggle('active');
+                    
+                    if (serviceItem.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.textContent = '−';
+                    } else {
+                        content.style.maxHeight = null;
+                        icon.textContent = '+';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Sobre Mí Section -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hola, soy <strong>María Inés Belvedere</strong>, astróloga y coach ontológico, pero me gusta definirme como acompañante en el proceso del Ser.</p>
+                    <p>Desde hace 10 años, a partir de cambios profundos en mi vida comencé a estudiar el lenguaje de la astrología, el simbolismo del tarot y coaching ontológico.</p>
+                    <p>Éstas herramientas acompañan en el camino del</p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-sparkles"></i> Autoconocimiento</li>
+                        <li><i class="fas fa-sparkles"></i> Expansión de conciencia</li>
+                        <li><i class="fas fa-sparkles"></i> Reflexión</li>
+                        <li><i class="fas fa-sparkles"></i> Desarrollo Personal</li>
+                    </ul>
+                    <p>Re-diseñando la ruta en el viaje del alma, el viaje del héroe que somos.</p>
+                    <div class="about-cta">
+                        <a href="#contacto" class="btn-primary">Agendar una consulta</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="Imgs/imagen astrologa.png" alt="Maria Astro Coach">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5491563504385" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="Imgs/imagen astrologa.png" alt="Maria Astro Coach">
+                    <h3>Maria Astro Coach</h3>
+                </div>
+                
+                <!-- Sección de redes sociales eliminada -->
+                
+                <div class="copyright">
+                    <p>&copy; 2025 Maria Astro Coach. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

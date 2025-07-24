@@ -1429,17 +1429,61 @@ a:hover {
     .menu-toggle {
         display: block;
         cursor: pointer;
-        padding: 10px;
+        padding: 15px;
         z-index: 1000;
+        position: relative;
+        width: 30px;
+        height: 24px;
     }
     
     .menu-toggle span {
         display: block;
-        width: 25px;
+        position: absolute;
         height: 3px;
+        width: 100%;
         background: var(--primary-color);
-        margin: 5px 0;
-        transition: all 0.3s ease;
+        border-radius: 3px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .menu-toggle span:nth-child(1) {
+        top: 0px;
+    }
+    
+    .menu-toggle span:nth-child(2), .menu-toggle span:nth-child(3) {
+        top: 10px;
+    }
+    
+    .menu-toggle span:nth-child(4) {
+        top: 20px;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        top: 10px;
+        width: 0%;
+        left: 50%;
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(4) {
+        top: 10px;
+        width: 0%;
+        left: 50%;
+    }
+    
+    /* Clase para bloquear el scroll cuando el menú está abierto */
+    body.menu-open {
+        overflow: hidden;
     }
     
     /* Hero Section */

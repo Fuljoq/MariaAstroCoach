@@ -28,11 +28,39 @@ document.querySelector('.contact-buttons .whatsapp-btn').addEventListener('click
     console.log('WhatsApp contact button clicked');
 });
 
-// Mobile menu toggle (for future implementation)
-const menuToggle = document.createElement('div');
-menuToggle.className = 'menu-toggle';
-menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-document.querySelector('.header .container').appendChild(menuToggle);
+// Mobile menu toggle
+const mobileMenu = document.getElementById('mobile-menu');
+const mainNav = document.getElementById('main-nav');
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Toggle mobile menu
+function toggleMenu() {
+    mobileMenu.classList.toggle('active');
+    mainNav.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+}
+
+// Close menu when a link is clicked
+function closeMenu() {
+    mobileMenu.classList.remove('active');
+    mainNav.classList.remove('active');
+    document.body.classList.remove('menu-open');
+}
+
+// Event listeners
+mobileMenu.addEventListener('click', toggleMenu);
+
+// Close menu when clicking on a nav link
+navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+
+// Close menu when clicking outside
+window.addEventListener('click', (e) => {
+    if (!e.target.closest('.main-nav') && !e.target.closest('.menu-toggle')) {
+        closeMenu();
+    }
+});
 
 // Add animation on scroll
 function animateOnScroll() {

@@ -1533,30 +1533,65 @@ a:hover {
     }
     
     /* Servicios */
+    .services {
+        padding: 60px 0;
+    }
+    
     .circular-services {
+        position: relative;
         width: 100%;
         height: auto;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px;
+        padding: 20px 10px;
         background: transparent;
         box-shadow: none;
+        margin: 0;
+        border-radius: 0;
     }
     
     .service-circle {
-        position: static;
+        position: relative !important;
         transform: none !important;
         margin: 15px 0;
-        width: 90%;
+        width: 100%;
         max-width: 320px;
         height: auto;
         min-height: 200px;
+        border-radius: 15px !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+        transition: all 0.3s ease;
+        padding: 20px 15px;
     }
     
     .service-circle:hover {
-        transform: none !important;
+        transform: translateY(-5px) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+        width: 100%;
         height: auto;
-        width: 90%;
+    }
+    
+    .service-info {
+        opacity: 1 !important;
+        transform: none !important;
+        position: relative !important;
+        width: 100% !important;
+    }
+    
+    .service-details {
+        max-height: none !important;
+        opacity: 1 !important;
+        margin-top: 15px;
+    }
+    
+    .service-details p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .center-circle {
+        display: none;
     }
     
     .center-circle {

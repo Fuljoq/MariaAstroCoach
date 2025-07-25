@@ -15,17 +15,22 @@
     <header class="header">
         <div class="container">
             <div class="logo-container">
-                <a href="index.html">
+                <a href="../index.html">
                     <img src="../Imgs/imagen astrologa.png" alt="Maria Astro Coach" class="logo">
                     <h1>Maria Astro Coach</h1>
                 </a>
             </div>
-            <nav class="main-nav">
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="main-nav" id="main-nav">
                 <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../index.html#servicios">Servicios</a></li>
-                    <li><a href="../index.html#sobre-mi">Sobre Mí</a></li>
-                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="../index.html#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="../index.html#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                    <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -89,5 +94,19 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script>
+        // Script para el menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mainNav = document.getElementById('main-nav');
+            
+            if (mobileMenu && mainNav) {
+                mobileMenu.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

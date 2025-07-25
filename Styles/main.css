@@ -1377,73 +1377,72 @@ a:hover {
 
 /* Móviles */
 @media (max-width: 768px) {
-    /* Header */
+    /* Header - Mobile Styles */
     .header {
         padding: 10px 0;
-    }
-    
-    .main-nav {
-        display: flex;
-    }
-
-    .main-nav ul {
-        display: flex;
-        list-style: none;
-        gap: 30px;
-        align-items: center;
-    }
-
-    .main-nav li {
-        margin: 0;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px 0;
+        background: white;
+        position: relative;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     
     .header .container {
-        flex-direction: row;
-        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         padding: 0 15px;
     }
     
+    .logo-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
     .logo {
         height: 40px;
+        margin-right: 10px;
     }
     
     .logo-container h1 {
         font-size: 1.2rem;
-        display: none; /* Ocultar el texto del logo en móvil */
+        color: var(--primary-color);
+        margin: 0;
     }
     
     .main-nav {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 80%;
-        height: calc(100vh - 70px);
-        background: rgba(255, 255, 255, 0.98);
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        z-index: 999;
-    }
-    
-    .main-nav.active {
-        left: 0;
+        width: 100%;
+        display: block !important;
     }
     
     .main-nav ul {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 15px;
     }
     
     .main-nav li {
-        margin: 10px 0;
-        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    
+    .main-nav a {
+        display: block;
+        padding: 12px 0;
+        color: var(--text-color);
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .main-nav a:hover {
+        color: var(--primary-color);
+        background-color: rgba(109, 76, 158, 0.05);
+        border-radius: 4px;
     }
     
     .main-nav a {
